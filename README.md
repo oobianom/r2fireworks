@@ -1,4 +1,4 @@
-# r2fireworks: Add festivities of fireworks to your Rmarkdown and Shiny application
+# r2fireworks: Add/remove celebratory fireworks to your Rmarkdown and Shiny application
 
 ### Official site: https://r2fireworks.obi.obianom.com
 
@@ -88,7 +88,7 @@ server <- function(input, output, session) {
   
   #### Example
   
-  ``{r}
+  `\``{r}
   library(r2fireworks)
   useFireworks()
   addRmdFireworks(particleCount = 30, speed = 3)
