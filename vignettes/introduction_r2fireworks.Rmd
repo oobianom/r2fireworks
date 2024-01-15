@@ -1,96 +1,79 @@
 ---
-title: "Here is the r2social R package: Inclusion of social sharing and connect buttons on a shiny app or rmarkdown"
+title: "Introducing the r2fireworks R package: add celebratory fireworks to page"
 author: "Obinna N. Obianom"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Here is the r2social R package: Inclusion of social sharing and connect buttons on a shiny app or rmarkdown}
+  %\VignetteIndexEntry{Introducing the r2fireworks R package: add celebratory fireworks to page}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 
-## The goal of this new R package is to provide functions that allow the inclusion of share and connect buttons on any page. This has been tested in Rmarkdown documents as well as on simply Shiny applications. See the examples folder of this package.
+## The goal of this new R package is to provide functions that allow the addition of fireworks to an Rmarkdown or Shiny app
 
-Constitutes the following features:
+Constitutes the following functions:
   
-      - [x] Share link buttons
+      - [x] useFireworks : include needed scripts in UI
       
-      - [x] Connect buttons
+      - [x] showFireworks: start the fireworks
       
-      - [x] Hyperlink buttons
-
-![](https://r2social.obi.obianom.com/r2social2.gif)
-
-### Installation and Library Attachment
-
-The r2social package is available on CRAN and can be installed as shown below
-
-`install.packages(r2social)`
-
-Attach library 
-
-`library(r2social)`
-
-### Use
-
-The r2social can be used within the R Markdown document or in Shiny applications as shown below
+      - [x] removeFireworks: remove the fireworks
 
 
-#### Include the scripts and stylesheets
+![](https://r2fireworks.obi.obianom.com/r2fireworks_out.gif)
 
-`r2social.scripts()`
 
-#### Use in Shiny Application
+## Two sample apps
 
-```{r eval=FALSE}
-
+```
+# simple example with automatic start
 library(shiny)
-library(r2social)
+library(r2fireworks)
 
 ui <- fluidPage(
-  
-  r2social.scripts(),
-  
-  #include share buttons
-  shareButton(link = "http://rpkg.net", position = "left"),
-  shareButton(link = "http://obianom.com", position = "right"),
-  shareButton(link = "http://google.com", position = "inline"),
-  
-  #include customized connect buttons where you specify direct links
-  connectButton(link = "http://rpkg.net", visit.us=TRUE, position = "inline"),
-  connectButton(link = "https://www.linkedin.com/in/oobianom", linkedin=TRUE, position = "inline"),
-  connectButton(link = "https://x.com/R2Rpkg", x=TRUE, plain = T, position = "inline",display.inline = FALSE),
-  connectButton(link = "https://x.com/R2Rpkg", x=TRUE, position = "inline",display.inline = FALSE)
+  useFireworks(),
+  shiny::tags$h1("Introducing r2fireworks"),
+  shiny::tags$p("Celebrate 4th of July and my R package!!!")
+)
+server <- function(input, output, session) {
+# optional. start fireworks on load
+  showFireworks(particleCount = 30)
+}
+
+shinyApp(ui, server)
+
+
+# example with start and stop buttons
+library(shiny)
+library(r2fireworks)
+
+ui <- fluidPage(
+  useFireworks(),
+  shiny::tags$h1("Here is the starts"),
+  shiny::tags$p("Celebrate 4th of July and my R package!!!"),
+  actionButton("startFW","Show and Start Fireworks, with speed x1"),
+  actionButton("startFWx4","Show and Start Fireworks, with speed x4"),
+  actionButton("startFWspx4","Show Fireworks, with particle burst size 10000"),
+  actionButton("stopFW","Remove Fireworks")
 )
 
+server <- function(input, output, session) {
+  observeEvent(input$startFW,{
+    showFireworks()
+  })
 
-```
+  observeEvent(input$startFWx4,{
+    showFireworks(speed = 4,particleCount = 50)
+  })
 
-#### Use in Rmarkdown documents
-
-```{r eval=FALSE}
-
-library(r2social)
-
-r2social.scripts()
-
-# include share buttons
-shareButton(link = "http://rpkg.net", position = "left")
-shareButton(link = "http://obianom.com", position = "right")
-shareButton(link = "https://shinyappstore.com/", position = "inline")
-
-# include customized connect buttons where you specify direct links
-connectButton(link = "http://rpkg.net", visit.us = TRUE, position = "inline")
-connectButton(link = "https://www.linkedin.com/in/oobianom", linkedin = TRUE, position = "inline")
-connectButton(link = "https://x.com/R2Rpkg", x = TRUE, plain = T, position = "inline", display.inline = FALSE)
-connectButton(link = "https://x.com/R2Rpkg", x = TRUE, position = "inline", display.inline = FALSE)
-
+  observeEvent(input$startFWspx4,{
+    showFireworks(speed = 1,particleCount = 10000)
+  })
+  observeEvent(input$stopFW,{
+    removeFireworks()
+  })
+}
 
 
 ```
-
-
-## Full examples and documentation
-
- + https://r2social.obi.obianom.com

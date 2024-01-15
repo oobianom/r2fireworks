@@ -7,13 +7,14 @@ Authors@R: c(
 Maintainer: Obinna Obianom <idonshayo@gmail.com>
 Description: Implementation of 'JQuery' <https://jquery.com> and 'CSS' styles to allow the display of fireworks on a document. Toolkit to easily incorporate celebratory splashes in markdown and shiny apps.
 License: MIT + file LICENSE
-URL: https://r2social.obi.obianom.com
-BugReports: https://github.com/oobianom/r2social/issues
+URL: https://r2fireworks.obi.obianom.com/
+BugReports: https://github.com/oobianom/r2fireworks/issues
 Depends: 
     R (> 3.6)
 Imports: 
     utils,
-    htmltools
+    htmltools,
+    shiny
 Suggests: 
     rmarkdown,
     knitr

@@ -11,8 +11,8 @@ Implementation of 'JQuery' \url{https://jquery.com} and 'CSS' styles to allow th
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://r2social.obi.obianom.com}
-  \item Report bugs at \url{https://github.com/oobianom/r2social/issues}
+  \item \url{https://r2fireworks.obi.obianom.com/}
+  \item Report bugs at \url{https://github.com/oobianom/r2fireworks/issues}
 }
 
 }

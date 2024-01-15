@@ -3,38 +3,69 @@
 #' Calls to load fireworks to a page
 #'
 #'
-#' @section Examples for r2social:
+#' @section Examples for r2fireworks:
 #' More examples and demo pages are located at this link -
-#' \url{https://r2social.obi.obianom.com}.
+#' \url{https://r2fireworks.obi.obianom.com}.
 #'
 #' @return scripts to load fireworks and trigger to start fireworks
 #'
 #' @examples
-#' connectButton(
-#' link = "//rpkg.net",
-#' visit.us = TRUE,
-#' position = "left")
-#' connectButton(
-#' link = "//www.linkedin.com/in/oobianom",
-#' linkedin = TRUE,
-#' position = "right")
-#' connectButton(
-#' link = "//x.com/R2Rpkg",
-#' x = TRUE, position = "inline")
+#' if(interactive()){
+#' # example 1: simple example with automatic start
+#' library(shiny)
+#' library(r2fireworks)
 #'
-#' # NOT styled
-#' connectButton(
-#' link = "//rpkg.net",
-#' visit.us = TRUE,
-#' position = "left")
-#' connectButton(
-#' link = "//www.linkedin.com/in/oobianom",
-#' linkedin = TRUE,
-#' plain = TRUE,
-#' position = "right")
-#' connectButton(
-#' link = "//x.com/R2Rpkg",
-#' x = TRUE, position = "inline")
+#' ui <- fluidPage(
+#'   useFireworks(),
+#'   shiny::tags$h1("Introducing r2fireworks"),
+#'   shiny::tags$p("Celebrate 4th of July and my R package!!!")
+#' )
+#' server <- function(input, output, session) {
+#'   # optional. start fireworks on load
+#'   showFireworks(particleCount = 30)
+#' }
+#'
+#' shinyApp(ui, server)
+#'
+#'
+#'
+#'
+#'
+#'
+#'
+#' # example 2: sample with start and stop buttons
+#' library(shiny)
+#' library(r2fireworks)
+#'
+#' ui <- fluidPage(
+#'   useFireworks(),
+#'   shiny::tags$h1("Here is the starts"),
+#'   shiny::tags$p("Celebrate 4th of July and my R package!!!"),
+#'   actionButton("startFW","Show and Start Fireworks, with speed x1"),
+#'   actionButton("startFWx4","Show and Start Fireworks, with speed x4"),
+#'   actionButton("startFWspx4","Show Fireworks, with particle burst size 10000"),
+#'   actionButton("stopFW","Remove Fireworks")
+#' )
+#'
+#' server <- function(input, output, session) {
+#'   observeEvent(input$startFW,{
+#'     showFireworks()
+#'   })
+#'
+#'   observeEvent(input$startFWx4,{
+#'     showFireworks(speed = 4,particleCount = 50)
+#'   })
+#'
+#'   observeEvent(input$startFWspx4,{
+#'     showFireworks(speed = 1,particleCount = 10000)
+#'   })
+#'   observeEvent(input$stopFW,{
+#'     removeFireworks()
+#'   })
+#' }
+#'
+#' }
+
 #'
 #' @export
 
@@ -80,25 +111,3 @@ vers <- "1.1.0"
 
 
 
-#' @export
-
-showFireworks <- function(duration = NULL, speed = 1, particleCount = 40, session = getDefaultReactiveDomain()){
-  fireworkMessenger(type = "start", duration = duration, speed = speed, particleCount = particleCount)
-}
-
-#' @export
-
-removeFireworks <- function(session = getDefaultReactiveDomain()){
-  fireworkMessenger(type = "remove")
-}
-
-#' @export
-
-fireworkMessenger <- function(type,duration=NULL,speed=NULL, particleCount = 30, session = getDefaultReactiveDomain()){
-  session$sendCustomMessage("fwstatus598", list(
-    what = type,
-    duration = duration,
-    speed = speed,
-    particleCount = particleCount
-  ))
-}

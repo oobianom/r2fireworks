@@ -1,6 +1,5 @@
 server <- function(input, output, session) {
-
-  # start fireworks on load
+  # optional. start fireworks on load
   showFireworks(particleCount = 30)
 
   observeEvent(input$startFW,{
