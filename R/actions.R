@@ -49,10 +49,17 @@ removeFireworks <- function(session = getDefaultReactiveDomain()){
 
 #' Add fireworks on Rmarkdown page
 #'
-#' Add fireworks visuals to Rmardown page
+#' Add fireworks visuals to Rmarkdown page
 #'
 #' @return addition of firework canvas on the page
 #' @rdname fireworkMessenger
+#'
+#' @examples
+#' # In R markdown documents
+#' library(r2fireworks)
+#' useFireworks()
+#' addRmdFireworks(particleCount = 100, speed = 3)
+#'
 #' @export
 
 addRmdFireworks <- function(speed = 1, particleCount = 40){

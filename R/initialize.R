@@ -10,6 +10,9 @@
 #' @return scripts to load fireworks and trigger to start fireworks
 #'
 #' @examples
+#'
+#' # In shiny applications
+#'
 #' if(interactive()){
 #' # example 1: simple example with automatic start
 #' library(shiny)

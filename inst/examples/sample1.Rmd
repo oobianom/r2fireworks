@@ -12,7 +12,7 @@ output:
 ```{r}
 library(r2fireworks)
 useFireworks()
-addRmdFireworks(particleCount = 30, speed = 3)
+addRmdFireworks(particleCount = 10, speed = 3)
 
 ```
 

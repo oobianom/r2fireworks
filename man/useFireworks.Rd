@@ -19,6 +19,9 @@ More examples and demo pages are located at this link -
 }
 
 \examples{
+
+# In shiny applications
+
 if(interactive()){
 # example 1: simple example with automatic start
 library(shiny)

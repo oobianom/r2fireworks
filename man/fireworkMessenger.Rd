@@ -16,7 +16,6 @@ fireworkMessenger(
 )
 
 showFireworks(
-  duration = NULL,
   speed = 1,
   particleCount = 40,
   session = getDefaultReactiveDomain()
@@ -24,12 +23,7 @@ showFireworks(
 
 removeFireworks(session = getDefaultReactiveDomain())
 
-addRmdFireworks(
-  duration = NULL,
-  speed = 1,
-  particleCount = 40,
-  session = getDefaultReactiveDomain()
-)
+addRmdFireworks(speed = 1, particleCount = 40)
 }
 \arguments{
 \item{type}{type of action e.g start, remove}
@@ -58,5 +52,12 @@ Add fireworks visuals to page
 
 Remove fireworks visuals from page
 
-Add fireworks visuals to Rmardown page
+Add fireworks visuals to Rmarkdown page
+}
+\examples{
+# In R markdown documents
+library(r2fireworks)
+useFireworks()
+addRmdFireworks(particleCount = 100, speed = 3)
+
 }
