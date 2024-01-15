@@ -6,7 +6,7 @@ ui <- fluidPage(
   useFireworks(),
   shiny::tags$h1("Here is the start"),
   HTML('
-       <div id="underfireworkskit"><canvas id="canvas">Canvas is not supported in your browser.</canvas></div>
+       <div id="underfireworkskit00056"><canvas id="canvas">Canvas is not supported in your browser.</canvas></div>
        '),
   shiny::tags$p("
   Celebrate 4th of July and my R package!!!
