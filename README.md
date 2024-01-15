@@ -88,7 +88,7 @@ server <- function(input, output, session) {
   
   #### Example
   
-  `\``{r}
+  `/``{r}
   library(r2fireworks)
   useFireworks()
   addRmdFireworks(particleCount = 30, speed = 3)
