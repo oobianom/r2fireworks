@@ -1,5 +1,5 @@
 url: https://r2fireworks.obi.obianom.com
 
 template:
-  package: tidytemplate
   bootstrap: 5
+  bootswatch: sandstone
