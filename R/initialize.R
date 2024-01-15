@@ -76,6 +76,6 @@ useFireworks <- function(startOnLoad = TRUE){
 
 scr.elm <- c("style", "script", "html")
 pkgn <- .packageName
-vers <- "0.1.0"
+vers <- "1.1.0"
 
 
