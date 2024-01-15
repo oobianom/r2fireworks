@@ -4,10 +4,7 @@
 \alias{useFireworks}
 \title{Set up firework scripts and loader}
 \usage{
-useFireworks(startOnLoad = TRUE)
-}
-\arguments{
-\item{startOnLoad}{start the fireworks on load}
+useFireworks()
 }
 \value{
 scripts to load fireworks and trigger to start fireworks

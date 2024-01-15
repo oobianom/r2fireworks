@@ -2,7 +2,6 @@
 #'
 #' Calls to load fireworks to a page
 #'
-#' @param startOnLoad start the fireworks on load
 #'
 #' @section Examples for r2social:
 #' More examples and demo pages are located at this link -
@@ -39,7 +38,7 @@
 #'
 #' @export
 
-useFireworks <- function(startOnLoad = TRUE){
+useFireworks <- function(){
   template.loc1 <- file.path(find.package(package = pkgn), "themes")
   css <- paste0(.packageName, ".css")
   js <- paste0(.packageName, ".js")
@@ -53,6 +52,7 @@ useFireworks <- function(startOnLoad = TRUE){
       stylesheet = css,
       all_files = TRUE
     )
+
   } else {
     # fetch scripts
     fetch.css <- readLines(file.path(template.loc1, css))
@@ -79,3 +79,26 @@ pkgn <- .packageName
 vers <- "1.1.0"
 
 
+
+#' @export
+
+showFireworks <- function(duration = NULL, speed = 1, particleCount = 40, session = getDefaultReactiveDomain()){
+  fireworkMessenger(type = "start", duration = duration, speed = speed, particleCount = particleCount)
+}
+
+#' @export
+
+removeFireworks <- function(session = getDefaultReactiveDomain()){
+  fireworkMessenger(type = "remove")
+}
+
+#' @export
+
+fireworkMessenger <- function(type,duration=NULL,speed=NULL, particleCount = 30, session = getDefaultReactiveDomain()){
+  session$sendCustomMessage("fwstatus598", list(
+    what = type,
+    duration = duration,
+    speed = speed,
+    particleCount = particleCount
+  ))
+}

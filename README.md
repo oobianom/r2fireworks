@@ -22,17 +22,15 @@ Attach library
 library(shiny)
 library(r2fireworks)
 
-
-#ex 1 - to share various links
 ui <- fluidPage(
- useFireworks(startOnLoad = TRUE)
+  useFireworks(startOnLoad = TRUE),
+  shiny::tags$h1("Introducing r2fireworks"),
+  shiny::tags$p("Celebrate 4th of July and my R package!!!")
 )
+server <- function(input, output, session) {
+}
 
-#ex 2 - to link your page to specific domain online
-ui <- fluidPage(
-  
-)
-
+shinyApp(ui, server)
 
 ```
 

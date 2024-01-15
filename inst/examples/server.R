@@ -1,11 +1,20 @@
 server <- function(input, output, session) {
-  output$summary <- renderPrint({
-    dataset <- get(input$dataset, "package:datasets")
-    summary(dataset)
+
+  # start fireworks on load
+  showFireworks(particleCount = 30)
+
+  observeEvent(input$startFW,{
+    showFireworks()
   })
 
-  output$table <- renderTable({
-    dataset <- get(input$dataset, "package:datasets")
-    dataset
+  observeEvent(input$startFWx4,{
+    showFireworks(speed = 4,particleCount = 50)
+  })
+
+  observeEvent(input$startFWspx4,{
+    showFireworks(speed = 1,particleCount = 10000)
+  })
+  observeEvent(input$stopFW,{
+    removeFireworks()
   })
 }
