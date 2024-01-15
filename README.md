@@ -2,7 +2,7 @@
 
 ### Official site: https://r2fireworks.obi.obianom.com
 
-
+![](https://r2fireworks.obi.obianom.com/r2fireworks_out.gif)
 
 ### Installation and Library Attachment
 
