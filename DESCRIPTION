@@ -5,12 +5,12 @@ Version: 0.1.0
 Authors@R: c(
     person("Obinna", "Obianom", email = "idonshayo@gmail.com", role = c("aut", "cre")))
 Maintainer: Obinna Obianom <idonshayo@gmail.com>
-Description: Implementation of 'JQuery' <https://jquery.com> and 'CSS' styles to allow display of fireworks on a document. Toolkit to easily incorporate celebratory splashes in markdown and shiny apps.
+Description: Implementation of 'JQuery' <https://jquery.com> and 'CSS' styles to allow the display of fireworks on a document. Toolkit to easily incorporate celebratory splashes in markdown and shiny apps.
 License: MIT + file LICENSE
 URL: https://r2social.obi.obianom.com
 BugReports: https://github.com/oobianom/r2social/issues
 Depends: 
-    R (>= 3.6)
+    R (> 3.6)
 Imports: 
     utils,
     htmltools
