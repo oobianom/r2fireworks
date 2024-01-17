@@ -4,9 +4,9 @@
 \name{r2fireworks-package}
 \alias{r2fireworks}
 \alias{r2fireworks-package}
-\title{r2fireworks: Enhance Your 'Rmarkdown' and 'Shiny' Apps with Dazzling Fireworks Celebrations}
+\title{r2fireworks: Enhance Your 'Rmarkdown' and 'shiny' Apps with Dazzling Fireworks Celebrations}
 \description{
-Implementation of 'JQuery' \url{https://jquery.com} and 'CSS' styles to allow the display of fireworks on a document. Toolkit to easily incorporate celebratory splashes in markdown and shiny apps.
+Implementation of 'JQuery' \url{https://jquery.com} and 'CSS' styles to allow the display of fireworks on a document. Toolkit to easily incorporate celebratory splashes in 'Rmarkdown' and 'shiny' apps.
 }
 \seealso{
 Useful links:

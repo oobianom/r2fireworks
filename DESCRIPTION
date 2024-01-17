@@ -1,11 +1,11 @@
 Package: r2fireworks
 Type: Package
-Title: Enhance Your 'Rmarkdown' and 'Shiny' Apps with Dazzling Fireworks Celebrations
+Title: Enhance Your 'Rmarkdown' and 'shiny' Apps with Dazzling Fireworks Celebrations
 Version: 0.1.0
 Authors@R: c(
     person("Obinna", "Obianom", email = "idonshayo@gmail.com", role = c("aut", "cre")))
 Maintainer: Obinna Obianom <idonshayo@gmail.com>
-Description: Implementation of 'JQuery' <https://jquery.com> and 'CSS' styles to allow the display of fireworks on a document. Toolkit to easily incorporate celebratory splashes in markdown and shiny apps.
+Description: Implementation of 'JQuery' <https://jquery.com> and 'CSS' styles to allow the display of fireworks on a document. Toolkit to easily incorporate celebratory splashes in 'Rmarkdown' and 'shiny' apps.
 License: MIT + file LICENSE
 URL: https://r2fireworks.obi.obianom.com/
 BugReports: https://github.com/oobianom/r2fireworks/issues
